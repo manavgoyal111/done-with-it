@@ -40,11 +40,6 @@ function GoalInput(props) {
 }
 
 const styles = StyleSheet.create({
-	image: {
-		width: 100,
-		height: 100,
-		marginBottom: 20,
-	},
 	inputContainer: {
 		flex: 1,
 		justifyContent: "center",
@@ -52,14 +47,20 @@ const styles = StyleSheet.create({
 		backgroundColor: "#311b6b",
 		borderBottomColor: "#cccccc",
 	},
+	image: {
+		width: 100,
+		height: 100,
+		marginBottom: 20,
+	},
 	textInput: {
-		width: "80%",
+        width: "80%",
 		padding: 10,
 		backgroundColor: "#e4d0ff",
 		color: "#120438",
 		borderRadius: 6,
 		borderWidth: 1,
 		borderColor: "#e4d0ff",
+        marginBottom: 20,
 	},
 	buttonContainer: {
 		flexDirection: "row",

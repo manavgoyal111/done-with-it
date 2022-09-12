@@ -13,6 +13,7 @@ function HomeScreen() {
 	// UseEffect Functions
 	useEffect(() => {
 		getData();
+		// AsyncStorage.clear();
 	}, []);
 
 	// Functions
@@ -38,6 +39,8 @@ function HomeScreen() {
 		setCourseGoals((currentCourseGoals) => {
 			return currentCourseGoals.filter((goal) => goal.id !== id);
 		});
+		const newData = courseGoals.filter((goal) => goal.id !== id);
+		storeData(newData);
 	};
 
 	const storeData = async (value) => {
@@ -114,6 +117,7 @@ const styles = StyleSheet.create({
 	},
 	goalsContainer: {
 		flex: 4,
+		paddingTop: 20,
 	},
 });
 

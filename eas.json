@@ -14,17 +14,6 @@
 				"simulator": true
 			}
 		},
-		"preview": {
-			"developmentClient": true,
-			"distribution": "internal",
-			"android": {
-				"buildType": "apk",
-				"gradleCommand": ":app:assembleRelease"
-			},
-			"ios": {
-				"simulator": true
-			}
-		},
 		"development": {
 			"developmentClient": true,
 			"distribution": "internal"

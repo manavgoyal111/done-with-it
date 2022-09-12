@@ -1,39 +1,37 @@
 {
-  "expo": {
-    "name": "Done With It",
-    "slug": "done-with-it",
-    "version": "1.1.0",
-    "backgroundColor": "#e0dce8",
-    "icon": "./app/assets/icon.png",
-    "splash": {
-      "image": "./app/assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.manavgoyal111.donewithit"
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./app/assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      },
-      "package": "com.manavgoyal111.donewithit"
-    },
-    "web": {
-      "favicon": "./app/assets/favicon.png"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "28cc58fc-1b20-42a7-8799-6ce49a682f41"
-      }
-    }
-  }
+	"expo": {
+		"name": "Done With It",
+		"slug": "done-with-it",
+		"version": "1.1.0",
+		"backgroundColor": "#e0dce8",
+		"icon": "./app/assets/icon.png",
+		"splash": {
+			"image": "./app/assets/splash.png",
+			"resizeMode": "contain",
+			"backgroundColor": "#ffffff"
+		},
+		"updates": {
+			"fallbackToCacheTimeout": 0
+		},
+		"assetBundlePatterns": ["**/*"],
+		"ios": {
+			"supportsTablet": true,
+			"bundleIdentifier": "com.manavgoyal111.donewithit"
+		},
+		"android": {
+			"adaptiveIcon": {
+				"foregroundImage": "./app/assets/icon.png",
+				"backgroundColor": "#ffffff"
+			},
+			"package": "com.manavgoyal111.donewithit"
+		},
+		"web": {
+			"favicon": "./app/assets/favicon.png"
+		},
+		"extra": {
+			"eas": {
+				"projectId": "28cc58fc-1b20-42a7-8799-6ce49a682f41"
+			}
+		}
+	}
 }
