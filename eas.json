@@ -3,22 +3,27 @@
 		"version": ">= 0.60.0"
 	},
 	"build": {
-		"preview": {
+		"horse": {
+			"developmentClient": true,
 			"distribution": "internal",
 			"android": {
-				"buildType": "apk"
+				"buildType": "apk",
+				"gradleCommand": ":app:assembleRelease"
 			},
 			"ios": {
 				"simulator": true
 			}
 		},
-		"preview2": {
+		"preview": {
+			"developmentClient": true,
+			"distribution": "internal",
 			"android": {
+				"buildType": "apk",
 				"gradleCommand": ":app:assembleRelease"
+			},
+			"ios": {
+				"simulator": true
 			}
-		},
-		"preview3": {
-			"developmentClient": true
 		},
 		"development": {
 			"developmentClient": true,

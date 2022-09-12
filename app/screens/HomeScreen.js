@@ -1,13 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { StyleSheet, View, FlatList, Button } from "react-native";
 import { StatusBar } from "expo-status-bar";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import GoalItem from "../components/GoalItem";
 import GoalInput from "../components/GoalInput";
 
 function HomeScreen() {
+	// UseState Variables
 	const [courseGoals, setCourseGoals] = useState([]);
 	const [modalIsVisible, setModalIsVisible] = useState(false);
 
+	// UseEffect Functions
+	useEffect(() => {
+		getData();
+	}, []);
+
+	// Functions
 	const startAddGoalHandler = () => {
 		setModalIsVisible(true);
 	};
@@ -17,16 +25,39 @@ function HomeScreen() {
 	};
 
 	const addGoalHandler = (enteredGoalText) => {
+		const randomId = Math.random().toString();
+
 		setCourseGoals((currentCourseGoals) => [
 			...currentCourseGoals,
-			{ text: enteredGoalText, id: Math.random().toString() },
+			{ text: enteredGoalText, id: randomId },
 		]);
+		storeData([...courseGoals, { text: enteredGoalText, id: randomId }]);
 	};
 
 	const deleteGoalHandler = (id) => {
 		setCourseGoals((currentCourseGoals) => {
 			return currentCourseGoals.filter((goal) => goal.id !== id);
 		});
+	};
+
+	const storeData = async (value) => {
+		try {
+			const jsonValue = JSON.stringify(value);
+			await AsyncStorage.setItem("courseGoals", jsonValue);
+		} catch (e) {
+			console.log(e);
+		}
+	};
+
+	const getData = async () => {
+		try {
+			const jsonValue = await AsyncStorage.getItem("courseGoals");
+			if (jsonValue !== null) {
+				setCourseGoals(JSON.parse(jsonValue));
+			}
+		} catch (e) {
+			console.log(e);
+		}
 	};
 
 	return (
