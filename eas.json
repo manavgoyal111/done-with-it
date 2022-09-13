@@ -3,7 +3,7 @@
 		"version": ">= 0.60.0"
 	},
 	"build": {
-		"horse": {
+		"development": {
 			"developmentClient": true,
 			"distribution": "internal",
 			"android": {
@@ -14,11 +14,17 @@
 				"simulator": true
 			}
 		},
-		"development": {
+		"production": {
 			"developmentClient": true,
-			"distribution": "internal"
-		},
-		"production": {}
+			"distribution": "internal",
+			"android": {
+				"buildType": "apk",
+				"gradleCommand": ":app:assembleRelease"
+			},
+			"ios": {
+				"simulator": true
+			}
+		}
 	},
 	"submit": {
 		"production": {}
